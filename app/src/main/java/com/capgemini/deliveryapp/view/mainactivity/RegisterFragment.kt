@@ -1,4 +1,4 @@
-package com.capgemini.deliveryapp.view
+package com.capgemini.deliveryapp.view.mainactivity
 
 import android.content.Intent
 import android.os.Bundle
@@ -9,10 +9,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import androidx.navigation.findNavController
-import androidx.navigation.fragment.findNavController
 import com.capgemini.deliveryapp.R
 import com.capgemini.deliveryapp.Repository.DBWrapper
 import com.capgemini.deliveryapp.presenter.RegisterFragmentPresenter
+import com.capgemini.deliveryapp.view.deliveryactivity.DeliveryActivity
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.fragment_register.*
 
@@ -28,15 +28,18 @@ class RegisterFragment : Fragment(), RegisterFragmentPresenter.View {
         savedInstanceState: Bundle?
     ): View? {
         // if current user already logged in, navigate directly to dashboard
-        if (fAuth.currentUser != null) {
-            Toast.makeText(activity,  "User Already Logged In", Toast.LENGTH_LONG).show()
-            Log.d("current user", fAuth.currentUser.toString())
-            val intent = Intent(activity,
-                DeliveryActivity::class.java)
+        presenter = RegisterFragmentPresenter(this)
+        presenter.CheckUserLoggedIn {
+            activity?.finish()
+            val intent = Intent(activity, DeliveryActivity::class.java)
+            requireActivity().finish()
             startActivity(intent)
         }
+
+
         return inflater.inflate(R.layout.fragment_register, container, false)
     }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         //replace with synthetic
         progressBar = view.findViewById(R.id.progressBar)
@@ -55,27 +58,28 @@ class RegisterFragment : Fragment(), RegisterFragmentPresenter.View {
         super.onViewCreated(view, savedInstanceState)
     }
 
+    //registers a new user and moves to next activity
     private fun onRegisterClick() {
-        showProgressBar()
+
         val name = rnameE.text.toString().trim()
         val email = remailE.text.toString().trim()
         val pass = rpassE.text.toString().trim()
         val phone = rphoneE.text.toString().trim()
         //validateEmail
         val emailvalidated = presenter.validateEmail(email)
-        //validate password
+        Log.d("validated", emailvalidated.toString())
         val passwordvalidated = presenter.validatePassword(pass)
+        Log.d("password validated", passwordvalidated.toString())
         //create user with email and password
-        if (emailvalidated == true and passwordvalidated) {
+        if ((emailvalidated && passwordvalidated)) {
             presenter.createFirebaseUserWithEmailAndPassword(name, phone, email, pass) {
-                val wrapper= context?.let {
-                        it1 -> DBWrapper(it1) }
-                Log.d("database3","database")
-                //queries firebase for menu items,adds to internal db with quantity of 0
+
+                val wrapper = DBWrapper(requireContext())
+                Log.d("database3reg", "database")
+
                 wrapper?.addRowsFromFirebase()
 
-                val intent = Intent(activity,DeliveryActivity::class.java)
-                startActivity(intent)
+                navigateToDelivery()
             }
         }
 
@@ -88,6 +92,15 @@ class RegisterFragment : Fragment(), RegisterFragmentPresenter.View {
     override fun hideProgressBar() {
         progressBar.visibility = View.INVISIBLE
         Log.d("progress bar ", "progress bar hidden")
+    }
+
+    override fun navigateToDelivery() {
+        val intent = Intent(
+            activity,
+            DeliveryActivity::class.java
+        )
+        requireActivity().finish()
+        startActivity(intent)
     }
 
     override fun showToast(message: String?) {

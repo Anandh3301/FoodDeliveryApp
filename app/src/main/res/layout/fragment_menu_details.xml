@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    app:cardBackgroundColor="#fffbe6"
-    tools:context=".view.MenuDetailsFragment">
+    app:cardBackgroundColor="@color/cream"
+    tools:context=".view.deliveryactivity.slidemenu.menu.MenuDetailsFragment">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -17,6 +17,7 @@
             android:layout_height="match_parent">
 
             <ScrollView
+                android:id="@+id/scrollView2"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:fillViewport="true">
@@ -26,10 +27,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_marginStart="40dp"
-                    android:layout_marginTop="80dp"
+                    android:layout_marginTop="70dp"
                     android:layout_marginEnd="40dp"
                     android:layout_marginBottom="60dp"
-                    app:cardBackgroundColor="#57B9E4C9"
+                    app:cardBackgroundColor="@color/mild_green"
                     app:cardCornerRadius="10dp"
                     app:cardElevation="0dp"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -49,10 +50,11 @@
                             android:layout_marginTop="20dp"
                             android:layout_marginEnd="20dp"
                             android:layout_marginBottom="20dp"
-                            android:text="Guilt-free gluten-free spaghetti pasta is sauteed in a garlic, kale pesto. It's an easy and healthy dinner"
+                            android:fontFamily="@font/lekton"
+                            android:text="@string/item_desc"
                             android:textAlignment="center"
-                            android:textColor="#356859"
-                            android:textSize="15sp"
+                            android:textColor="@color/med_green"
+                            android:textSize="18sp"
                             app:layout_constraintBottom_toTopOf="@+id/dash1"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintHorizontal_bias="0.5"
@@ -60,19 +62,20 @@
                             app:layout_constraintTop_toBottomOf="@+id/dash2"
                             app:layout_constraintVertical_bias="0.075" />
 
-                        <EditText
+                        <TextView
                             android:id="@+id/dcountE"
                             android:layout_width="50dp"
-                            android:layout_height="wrap_content"
-                            android:backgroundTint="#37966f"
+                            android:layout_height="35dp"
+                            android:layout_marginTop="5dp"
                             android:clickable="false"
                             android:ems="10"
                             android:enabled="false"
+                            android:fontFamily="@font/lektonb"
                             android:inputType="numberDecimal"
-                            android:text="0"
+                            android:text="@string/zero"
                             android:textAlignment="center"
-                            android:textColor="#356859"
-                            android:textSize="18sp"
+                            android:textColor="@color/med_green"
+                            android:textSize="24sp"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/dash1" />
@@ -84,12 +87,12 @@
                             android:layout_marginStart="8dp"
                             android:layout_marginTop="30dp"
                             android:layout_marginEnd="8dp"
-                            android:backgroundTint="#37966f"
+                            android:backgroundTint="@color/med_green"
                             android:clickable="true"
                             android:ems="10"
                             android:enabled="false"
                             android:inputType="textPersonName"
-                            android:textColor="#37966f"
+                            android:textColor="@color/med_green"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintHorizontal_bias="0.5"
                             app:layout_constraintStart_toStartOf="parent"
@@ -101,12 +104,12 @@
                             android:layout_height="wrap_content"
                             android:layout_marginStart="8dp"
                             android:layout_marginEnd="8dp"
-                            android:backgroundTint="#37966f"
+                            android:backgroundTint="@color/med_green"
                             android:clickable="false"
                             android:ems="10"
                             android:enabled="false"
                             android:inputType="textPersonName"
-                            android:textColor="#37966f"
+                            android:textColor="@color/med_green"
                             android:textSize="5sp"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintHorizontal_bias="0.5"
@@ -118,22 +121,10 @@
                             android:layout_width="35dp"
                             android:layout_height="38dp"
                             android:layout_marginStart="5dp"
-                            android:layout_marginTop="3dp"
-                            android:backgroundTint="#F16220"
+                            android:backgroundTint="@android:color/transparent"
                             app:layout_constraintStart_toEndOf="@+id/dcountE"
                             app:layout_constraintTop_toTopOf="@+id/dcountE"
-                            app:srcCompat="@android:drawable/ic_menu_add" />
-
-                        <ImageButton
-                            android:id="@+id/minusB"
-                            android:layout_width="50dp"
-                            android:layout_height="45dp"
-                            android:adjustViewBounds="true"
-                            android:backgroundTint="#00B9E4C9"
-                            android:scaleType="centerCrop"
-                            app:layout_constraintEnd_toStartOf="@+id/dcountE"
-                            app:layout_constraintTop_toTopOf="@+id/dcountE"
-                            app:srcCompat="@drawable/minus" />
+                            app:srcCompat="@drawable/add" />
 
                         <TextView
                             android:id="@+id/dcostT"
@@ -141,10 +132,11 @@
                             android:layout_height="wrap_content"
                             android:layout_marginStart="10dp"
                             android:layout_marginTop="8dp"
-                            android:layout_marginBottom="20dp"
-                            android:text="Cost of Burger: "
-                            android:textColor="#356859"
-                            android:textSize="15sp"
+                            android:layout_marginBottom="10dp"
+                            android:fontFamily="@font/lektonb"
+                            android:text="@string/cost"
+                            android:textColor="@color/dark_green"
+                            android:textSize="18sp"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/dcartB" />
@@ -155,65 +147,96 @@
                             android:layout_height="wrap_content"
                             android:layout_marginStart="8dp"
                             android:layout_marginTop="8dp"
-                            android:layout_marginBottom="20dp"
-                            android:text="150"
-                            android:textColor="#fd5523"
-                            android:textSize="15sp"
+                            android:layout_marginBottom="10dp"
+                            android:fontFamily="@font/lektonb"
+                            android:text="@string/zero"
+                            android:textColor="@color/orange"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintStart_toEndOf="@+id/dcostT"
                             app:layout_constraintTop_toBottomOf="@+id/dcartB" />
 
-                        <ImageView
-                            android:id="@+id/dIV"
-                            android:layout_width="0dp"
-                            android:layout_height="0dp"
-                            android:layout_marginTop="20dp"
-                            android:scaleType="centerCrop"
-                            app:layout_constrainedHeight="true"
-                            app:layout_constrainedWidth="true"
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cardView4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="150dp"
+                            android:layout_marginStart="24dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="24dp"
+                            app:cardBackgroundColor="@android:color/transparent"
+                            app:cardCornerRadius="25dp"
+                            app:cardElevation="0dp"
                             app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintHeight_percent="0.35"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/dcountE"
-                            app:layout_constraintWidth_percent="0.75"
-                            app:srcCompat="@drawable/bg" />
+                            app:layout_constraintTop_toBottomOf="@+id/dcountE">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <ImageView
+                                    android:id="@+id/dIV"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:scaleType="fitCenter"
+                                    app:layout_constrainedHeight="false"
+                                    app:layout_constrainedWidth="false"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:srcCompat="@drawable/bg" />
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        </androidx.cardview.widget.CardView>
 
                         <Button
                             android:id="@+id/dcartB"
                             android:layout_width="wrap_content"
                             android:layout_height="40dp"
-                            android:layout_marginTop="15dp"
+                            android:layout_marginTop="10dp"
                             android:drawableLeft="@android:drawable/ic_input_add"
                             android:drawablePadding="0dp"
-                            android:drawableTint="#fd5523"
+                            android:drawableTint="@color/orange"
                             android:minWidth="0dp"
                             android:minHeight="0dp"
-                            android:text="Cart"
+                            android:text="@string/cart"
                             android:textSize="12sp"
                             app:iconPadding="0dp"
                             app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintHorizontal_bias="0.5"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/dIV" />
+                            app:layout_constraintTop_toBottomOf="@+id/cardView4" />
+
+                        <ImageButton
+                            android:id="@+id/minusB"
+                            android:layout_width="35dp"
+                            android:layout_height="38dp"
+                            android:layout_marginEnd="5dp"
+                            android:backgroundTint="@android:color/transparent"
+                            android:src="@drawable/minus"
+                            app:layout_constraintEnd_toStartOf="@+id/dcountE"
+                            app:layout_constraintTop_toTopOf="@+id/dcountE" />
+
+                        <TextView
+                            android:id="@+id/dnameT"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:fontFamily="@font/montserrat"
+                            android:text="@string/item_name"
+                            android:textAlignment="center"
+                            android:textColor="@color/orange"
+                            android:textSize="40sp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
                 </androidx.cardview.widget.CardView>
 
             </ScrollView>
 
-
-            <TextView
-                android:id="@+id/dnameT"
-                android:layout_width="0dp"
-                android:layout_height="120dp"
-                android:layout_marginTop="15dp"
-                android:text="Creamy Pesto Pasta"
-                android:textAlignment="center"
-                android:textColor="#FD5523"
-                android:textSize="50sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

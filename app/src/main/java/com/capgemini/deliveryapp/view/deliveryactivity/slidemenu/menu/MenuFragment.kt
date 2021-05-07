@@ -1,6 +1,7 @@
-package com.capgemini.deliveryapp.view.deliveryactivity.ui.menu
+package com.capgemini.deliveryapp.view.deliveryactivity.slidemenu.menu
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -9,7 +10,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.capgemini.deliveryapp.R
-import com.capgemini.deliveryapp.view.deliveryactivity.ui.menu.dummy.DummyContent
+import com.capgemini.deliveryapp.view.deliveryactivity.DeliveryActivity
+import com.capgemini.firebasedemo.AppData.FireBaseWrapper
 
 /**
  * A fragment representing a list of Items.
@@ -17,10 +19,14 @@ import com.capgemini.deliveryapp.view.deliveryactivity.ui.menu.dummy.DummyConten
 class MenuFragment : Fragment() {
 
     private var columnCount = 1
+    override fun onResume() {
+        super.onResume()
+        (activity as DeliveryActivity).checkInternetConnectivity()
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
+        Log.d("menu created", "menu called")
         arguments?.let {
             columnCount = it.getInt(ARG_COLUMN_COUNT)
         }
@@ -39,7 +45,12 @@ class MenuFragment : Fragment() {
                     columnCount <= 1 -> LinearLayoutManager(context)
                     else -> GridLayoutManager(context, columnCount)
                 }
-                adapter = MyMenuRecyclerViewAdapter(DummyContent.ITEMS)
+                val wrapper = FireBaseWrapper()
+                wrapper.getMenu {
+
+                    adapter = MyMenuRecyclerViewAdapter(it, activity)
+                }
+
             }
         }
         return view

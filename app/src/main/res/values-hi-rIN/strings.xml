@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">टंगीतो</string>
+    <string name="hello_world">
+हैलो स्क्वायर वर्ल्ड!</string>
+
+    <!--our strings -->
+    <string name="welcome"> टंगीतोमें आपका स्वागत है </string>
+    <string name="tutorial1">
+हम देश में सबसे अच्छा फास्ट फूड परोसते हैं, आपके दरवाजे पर! बस अपने शहर में टैंगिटो शाखा का चयन करें</string>
+    <string name="tutorial2">और प्रत्येक आइटम के लिए ऑर्डर बटन पर क्लिक करके अपना ऑर्डर दें। अपने आइटम को कार्ट में जोड़ें और अपनी कार्ट देखने के लिए कार्ट बटन का उपयोग करें और अपना ऑर्डर दें</string>
+    <string name="getstarted">अपने वर्तमान स्थान का उपयोग करके आरंभ करें</string>
+
+
+    <string name="cred" translatable="false">Credentials</string>
+    <string name="register" >रजिस्टर करें</string>
+    <string name="enter_name" >नाम दर्ज करें</string>
+    <string name="enter_email" >ईमेल दर्ज करें</string>
+    <string name="enter_password" >पासवर्ड दर्ज करें</string>
+    <string name="enter_phone" >फोन नंबर दर्ज करें</string>
+    <string name="already_signin" >
+पहले से ही एक उपयोगकर्ता
+है? साइन इन करें</string>
+    <string name="login" >
+लॉग इन करें</string>
+    <string name="register_user" >
+उपयोगकर्ता पंजीकृत करें</string>
+    <string name="current_loc" >मेरे वर्तमान स्थान का उपयोग करें</string>
+    <string name="user_name" >
+उपयोगकर्ता  का  नाम</string>
+    <string name="total" >कुल</string>
+    <string name="checkout" >भुगतान करें</string>
+    <string name="cart" >कार्ट</string>
+    <string name="item_name" >
+क्रीमी प्रेस्टो पास्ता</string>
+    <string name="item_desc" >
+आइटम के बारे में कुछ विवरण</string>
+    <string name="price" >कीमत</string>
+    <string name="item_burger">बर्गर</string>
+    <string name="details" >यह चुनें</string>
+    <string name="thankyou" >शुक्रिया!</string>
+    <string name="zero">0</string>
+    <string name="cost">कीमत:</string>
+    <string name="thanktext">
+हमसे भोजन मंगवाने के लिए धन्यवाद। कुल लागत:</string>
+<string name="reset">
+पासवर्ड रीसेट</string>
+    <string name="addcart">
+आइटम कार्ट में जोड़ा गया  </string>
+
+    <string name="oops"> कोई भी रेस्तरां आपके शहर में नहीं है</string>
+    <string name="alertm">इस एप्लिकेशन को कार्य करने के लिए आपके स्थान की आवश्यकता है!</string>
+    <string name="tryagain">पुनः प्रयास करें</string>
+    <string name="settings">Settings</string>
+    <string name="notfound">404: डेटाबेस में नहीं मिला</string>
+
+    <string name="invalidemail">ईमेल अमान्य है</string>
+    <string name="invalidpassword">पासवर्ड अमान्य</string>
+
+    <string name="restauraunt">रेस्तरां</string>
+    <string name="history">इतिहास</string>
+    <string name="menu">मेन्यू</string>
+    <string name="logout">लॉग आउट</string>
+    <string name="tap_to_select">चयन करने के लिए टैप करें</string>
+    <string name="select">रेस्तरां का चयन करें</string>
+
+    <string name="tutorial3">यदि आप इस एप्लिकेशन को अंग्रेज़ी में अनुभव करना चाहते हैं तो कृपया अपनी सिस्टम सेटिंग भाषा को अंग्रेज़ी में बदलें</string>
+
+    <string name="nonetwork">  कोई नेटवर्क कनेक्शन नहीं है</string>
+
+    <string name="connectioncheck"> कृपया अपना कनेक्शन जांचें</string>
+    <string name="logoutsure">क्या आप लॉग आउट करना चाहते हैं?</string>
+    <string name="yes">हाँ</string>
+    <string name="no">न</string>
+
+    <string name="emptycart">कार्ट खाली है</string>
+    <string name="selectrestaurant">एक रेस्तरां का चयन करें</string>
+</resources>

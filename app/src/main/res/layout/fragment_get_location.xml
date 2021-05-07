@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/cream"
-    tools:context=".view.deliveryactivity.sendButton">
+    tools:context=".view.deliveryactivity.maps.GetLocation">
 
     <!-- TODO: Update blank fragment layout -->
 
@@ -41,25 +41,13 @@
                 android:fontFamily="@font/lektonb"
                 android:textAlignment="center"
                 android:textAllCaps="true"
-                android:textColor="#F11515"
+                android:textColor="@color/red"
                 android:textSize="24sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.498"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView8" />
-
-            <ProgressBar
-                android:id="@+id/progressBarsendButton"
-                style="?android:attr/progressBarStyle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:visibility="invisible"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.498"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/buttonLatlng" />
 
             <TextView
                 android:id="@+id/textView"
@@ -70,7 +58,7 @@
                 android:fontFamily="@font/montserrat"
                 android:text="@string/welcome"
                 android:textAlignment="center"
-                android:textColor="#9C27B0"
+                android:textColor="@color/purple_1"
                 android:textSize="24sp"
                 android:textStyle="bold"
                 app:layout_constrainedWidth="false"
@@ -89,7 +77,7 @@
                 android:fontFamily="@font/lektonr"
                 android:text="@string/tutorial1"
                 android:textAlignment="center"
-                android:textColor="#0E2395"
+                android:textColor="@color/blue_1"
                 android:textSize="20sp"
                 app:layout_constrainedWidth="true"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -110,7 +98,7 @@
                 android:text="@string/tutorial2"
                 android:textAlignment="center"
                 android:textAllCaps="false"
-                android:textColor="#062CFD"
+                android:textColor="@color/blue_2"
                 android:textSize="20sp"
                 app:layout_constrainedWidth="true"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -129,7 +117,7 @@
                 android:text="@string/getstarted"
                 android:textAlignment="center"
                 android:textAllCaps="true"
-                android:textColor="#F10A0A"
+                android:textColor="@color/red"
                 android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -140,12 +128,14 @@
                 android:id="@+id/textView5"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="45dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="24dp"
                 android:fontFamily="@font/lektonb"
                 android:text="@string/tutorial3"
                 android:textAlignment="center"
                 android:textAllCaps="true"
-                android:textColor="#3B0A91"
+                android:textColor="@color/purple_2"
                 android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"

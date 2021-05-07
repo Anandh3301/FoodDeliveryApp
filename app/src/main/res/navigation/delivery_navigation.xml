@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/sendButton">
+
+    <fragment
+        android:id="@+id/nav_menu"
+        android:name="com.capgemini.deliveryapp.view.deliveryactivity.slidemenu.menu.MenuFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_menu_list" >
+        <action
+            android:id="@+id/action_nav_menu_to_menuDetailsFragment"
+            app:destination="@id/menuDetailsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_logout"
+        android:name="com.capgemini.deliveryapp.view.deliveryactivity.slidemenu.logout.LogoutFragment"
+        android:label="@string/menu_gallery"
+        tools:layout="@layout/fragment_logout" />
+    <fragment
+        android:id="@+id/sendButton"
+        android:name="com.capgemini.deliveryapp.view.deliveryactivity.maps.GetLocation"
+        android:label="fragment_send_button"
+        tools:layout="@layout/fragment_get_location" >
+        <action
+            android:id="@+id/action_sendButton_to_mapsFragment"
+            app:destination="@id/mapsFragment" />
+        <action
+            android:id="@+id/action_sendButton_to_oopsFragment2"
+            app:destination="@id/oopsFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/mapsFragment"
+        android:name="com.capgemini.deliveryapp.view.deliveryactivity.maps.MapsFragment"
+        android:label="MapsFragment" >
+        <action
+            android:id="@+id/action_mapsFragment_to_nav_menu"
+            app:destination="@id/nav_menu"
+            app:popUpTo="@id/sendButton"
+            app:popUpToInclusive="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/menuDetailsFragment"
+        android:name="com.capgemini.deliveryapp.view.deliveryactivity.slidemenu.menu.MenuDetailsFragment"
+        android:label="fragment_menu_details"
+        tools:layout="@layout/fragment_menu_details" />
+    <dialog
+        android:id="@+id/myBottomSheetDialogFragment"
+        android:name="com.capgemini.deliveryapp.view.deliveryactivity.MyBottomSheetDialogFragment"
+        android:label="MyBottomSheetDialogFragment" >
+        <action
+            android:id="@+id/action_myBottomSheetDialogFragment_to_menuDetailsFragment"
+            app:destination="@id/menuDetailsFragment" />
+    </dialog>
+    <fragment
+        android:id="@+id/oopsFragment2"
+        android:name="com.capgemini.deliveryapp.view.deliveryactivity.maps.OopsFragment"
+        android:label="fragment_oops"
+        tools:layout="@layout/fragment_oops" />
+    <fragment
+        android:id="@+id/orderFragment"
+        android:name="com.capgemini.deliveryapp.view.deliveryactivity.slidemenu.orders.OrderFragment"
+        android:label="fragment_order_list"
+        tools:layout="@layout/fragment_order_list" />
+
+</navigation>

@@ -1,5 +1,87 @@
 <resources>
-    <string name="app_name">Delivery App</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="app_name">Tangito</string>
+
+    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
+    <string name="title_activity_delivery" translatable="false">DeliveryActivity</string>
+    <string name="navigation_drawer_open" translatable="false">Open navigation drawer</string>
+    <string name="navigation_drawer_close" translatable="false">Close navigation drawer</string>
+    <string name="nav_header_title" translatable="false">Android Studio</string>
+    <string name="nav_header_subtitle" translatable="false">android.studio@android.com</string>
+    <string name="nav_header_desc" translatable="false">Navigation header</string>
+    <string name="action_settings" translatable="false">Settings</string>
+    <string name="menu_home" translatable="false">Tangito</string>
+    <string name="menu_gallery" translatable="false">Tangito</string>
+    <string name="menu_detail" translatable="false">Tangito</string>
+    <string name="send_button" translatable="false">Tangito</string>
+    <string name="title_activity_checkout" translatable="false">CheckoutActivity</string>
+    <!--
+    This string is used for square devices and overridden by hello_world in
+    values-round/strings.xml for round devices.
+    -->
+
+    <string name="hello_world">Hello Square World!</string>
+
+    <!--our strings -->
+    <string name="welcome">Welcome to Tangito!! </string>
+    <string name="tutorial1">We serve the best fast food in the country, right at your doorstep! Just select the Tangito branch in your city</string>
+    <string name="tutorial2">and place your order by clicking the Order button for each item. Add your items to the cart and use the Cart button to view your cart and place your order</string>
+    <string name="getstarted">Get started by using your current location</string>
+    <string name="register">Register</string>
+    <string name="enter_name">Enter Name</string>
+    <string name="enter_email">Enter Email</string>
+    <string name="enter_password">Enter Password</string>
+    <string name="enter_phone">Enter Phone Number</string>
+    <string name="already_signin">Already a user? Sign in</string>
+    <string name="login">Login</string>
+    <string name="register_user">Register User</string>
+    <string name="current_loc">Use my Current location</string>
+    <string name="user_name">User Name</string>
+    <string name="total">Total</string>
+    <string name="checkout">Checkout</string>
+    <string name="cart">Cart</string>
+    <string name="item_name">Pasta</string>
+    <string name="item_desc">Some description about the item</string>
+    <string name="price">Price</string>
+    <string name="item_burger">Burger</string>
+    <string name="details">Order</string>
+    <string name="thankyou">Thank You!</string>
+    <string name="zero">0</string>
+    <string name="quantity" translatable="false">Quantity</string>
+    <string name="cost">Cost:</string>
+    <string name="thanktext">Thank you for ordering from us.         Total Cost:</string>
+    <string name="reset">Reset Passwrod</string>
+    <string name="cred" translatable="false">Credentials</string>
+    <string name="addcart">
+item added to cart  </string>
+
+    <string name="oops">OOPS! No restaurants in your city</string>
+    <string name="alertm">This app requires your location to function!</string>
+    <string name="tryagain">Try again</string>
+    <string name="settings">Settings</string>
+    <string name="notfound">404 : Not found in database</string>
+
+    <string name="invalidemail">email is invalid</string>
+    <string name="invalidpassword">password is invalid</string>
+
+    <string name="restauraunt">Restaurants</string>
+    <string name="history">History</string>
+    <string name="menu">Menu</string>
+    <string name="logout">Logout</string>
+    <string name="tap_to_select">Tap to select</string>
+    <string name="select">Select a restauraunt</string>
+
+    <string name="tutorial3">Please change your system settings language to Hindi if you would like to experience this Application in Hindi</string>
+
+    <string name="nonetwork"> No network connection</string>
+
+    <string name="connectioncheck">Please check your connection</string>
+
+    <string name="logoutsure">Are you sure you want to Logout?</string>
+    <string name="yes">yes</string>
+    <string name="no">exit</string>
+
+    <string name="emptycart">cart is empty</string>
+    <string name="selectrestaurant">select a restaurant</string>
+
+
 </resources>
