@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "262265243541",
+    "project_id": "fooddeliveryapp-aa531",
+    "storage_bucket": "fooddeliveryapp-aa531.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:262265243541:android:3747100ec4c0ff0640589c",
+        "android_client_info": {
+          "package_name": "com.capgemini.deliveryapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "262265243541-2vekj9ees1ocerbqdeq0j9fs814ahg0p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBLoH9YWfamICEN1Is16-6KMFsG5j0kC1o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "262265243541-2vekj9ees1ocerbqdeq0j9fs814ahg0p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
