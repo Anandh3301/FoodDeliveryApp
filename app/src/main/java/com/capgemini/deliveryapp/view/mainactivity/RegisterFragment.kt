@@ -1,5 +1,6 @@
 package com.capgemini.deliveryapp.view
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -8,10 +9,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import com.capgemini.deliveryapp.R
+import com.capgemini.deliveryapp.Repository.DBWrapper
 import com.capgemini.deliveryapp.presenter.RegisterFragmentPresenter
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.fragment_register.*
 
 // TODO: Rename parameter arguments, choose names that match
@@ -27,8 +29,11 @@ class RegisterFragment : Fragment(), RegisterFragmentPresenter.View {
     ): View? {
         // if current user already logged in, navigate directly to dashboard
         if (fAuth.currentUser != null) {
-            Toast.makeText(activity, "User Already Logged In", Toast.LENGTH_LONG).show()
+            Toast.makeText(activity,  "User Already Logged In", Toast.LENGTH_LONG).show()
             Log.d("current user", fAuth.currentUser.toString())
+            val intent = Intent(activity,
+                DeliveryActivity::class.java)
+            startActivity(intent)
         }
         return inflater.inflate(R.layout.fragment_register, container, false)
     }
@@ -41,6 +46,7 @@ class RegisterFragment : Fragment(), RegisterFragmentPresenter.View {
         rsignB.setOnClickListener {
             it.findNavController().navigate(R.id.action_registerFragment_to_loginFragment)
         }
+
 
         registerB.setOnClickListener {
             onRegisterClick()
@@ -60,8 +66,18 @@ class RegisterFragment : Fragment(), RegisterFragmentPresenter.View {
         //validate password
         val passwordvalidated = presenter.validatePassword(pass)
         //create user with email and password
-        if (emailvalidated == true and passwordvalidated == true)
-            presenter.createFirebaseUserWithEmailAndPassword(name, phone, email, pass)
+        if (emailvalidated == true and passwordvalidated) {
+            presenter.createFirebaseUserWithEmailAndPassword(name, phone, email, pass) {
+                val wrapper= context?.let {
+                        it1 -> DBWrapper(it1) }
+                Log.d("database3","database")
+                //queries firebase for menu items,adds to internal db with quantity of 0
+                wrapper?.addRowsFromFirebase()
+
+                val intent = Intent(activity,DeliveryActivity::class.java)
+                startActivity(intent)
+            }
+        }
 
     }
 
